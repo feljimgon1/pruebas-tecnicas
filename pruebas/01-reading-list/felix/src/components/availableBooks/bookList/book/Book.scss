@@ -1,0 +1,18 @@
+.book-container {
+  .book {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+  }
+}
+
+@media (max-width:768px) {
+  .book-container {
+    margin: 0 auto;
+    .book {
+      width: 75vw;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+}
