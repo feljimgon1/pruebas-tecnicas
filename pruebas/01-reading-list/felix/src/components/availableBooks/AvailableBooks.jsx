@@ -12,7 +12,7 @@ const AvailableBooks = ({ books }) => {
       <div className="title">
         <h1>{numBooks} libros disponibles</h1>
       </div>
-      <BookFiltering />
+      <BookFiltering books={books}/>
       <BookList books={books} />
     </div>
   )

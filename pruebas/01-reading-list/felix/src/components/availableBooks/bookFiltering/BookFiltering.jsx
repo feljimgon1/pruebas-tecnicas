@@ -1,7 +1,7 @@
 import './BookFiltering.scss'
 import GenreFilter from './genreFilter/GenreFilter'
 
-const BookFiltering = () => {
+const BookFiltering = ({books}) => {
   return (
     <div className='book-filtering'>
       <div className='filter-pages'>
@@ -15,7 +15,7 @@ const BookFiltering = () => {
       </div>
       <div className='filter-genre'>
         <h2>Filtrar por género</h2>
-        <GenreFilter />
+        <GenreFilter books={books} />
       </div>
     </div>
   )
