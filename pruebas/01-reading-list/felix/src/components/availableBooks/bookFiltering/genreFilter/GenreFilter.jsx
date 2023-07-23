@@ -1,14 +1,15 @@
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import arrowDown from '../../../../assets/down-arrow.svg'
 import './GenreFilter.scss'
 
-const GenreFilter = ({books}) => {
+const GenreFilter = ({ books }) => {
 
-  var genres = [...new Set(books.map((book)=>{
+  var genres = [...new Set(books.map((book) => {
     return book.book.genre
   }))]
 
   const [displaySelectionMenu, setDisplaySelectionMenu] = useState(false)
+  const [displayNoneDelayed, setDisplayNoneDelayed] = useState(false)
 
   const handleToggleMenu = () => {
     setDisplaySelectionMenu(!displaySelectionMenu)
@@ -24,10 +25,10 @@ const GenreFilter = ({books}) => {
             alt='dropdown-arrow' />
         </div>
       </div>
-      <div className={`selection-menu ${displaySelectionMenu ? 'open' : 'closed'}`}>
-        {genres.map((genre, index)=>
-          <div key={index} 
-          className="selection-item"
+      <div className={`selection-menu ${!displaySelectionMenu ? 'closed' : ''}`}>
+        {genres.map((genre, index) =>
+          <div key={index}
+            className="selection-item"
           >{genre}</div>)}
       </div>
     </div>
